@@ -1,0 +1,32 @@
+version: '3.8'
+
+volumes:
+  db_data:
+
+services:
+  db:
+    build: ./postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: LojaOnline
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+
+  auth:
+    build: ./Authentication
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/LojaOnline
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+
+  cache:
+    image: redis:latest
+    ports:
+      - "6379:6379"
