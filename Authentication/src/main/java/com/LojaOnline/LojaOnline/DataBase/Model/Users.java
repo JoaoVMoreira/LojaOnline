@@ -22,11 +22,11 @@ public class Users implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    @Column(name = "user_email", length = 255)
+    @Column(name = "user_email", length = 255, unique = true)
     private String email;
     @Column(name = "user_password", length = 255)
     private String password;
-    @Column(name = "user_name", length = 255, unique = true)
+    @Column(name = "user_name", length = 255)
     private String name;
     @Column(name = "user_surname", length = 255)
     private String surname;
@@ -56,31 +56,31 @@ public class Users implements UserDetails {
 
     @Override
     public String getPassword() {
-        return "";
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return "";
+        return email;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
