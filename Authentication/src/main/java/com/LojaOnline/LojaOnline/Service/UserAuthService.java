@@ -3,6 +3,7 @@ package com.LojaOnline.LojaOnline.Service;
 import com.LojaOnline.LojaOnline.DTO.UserPostDTO;
 import com.LojaOnline.LojaOnline.DataBase.Model.Users;
 import com.LojaOnline.LojaOnline.DataBase.Repository.UserRepository;
+import com.LojaOnline.LojaOnline.Exceptions.RepeatedAttributeException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -32,6 +33,7 @@ public class UserAuthService {
     }
 
     public Users register(UserPostDTO data){
+        if(repository.findByEmail(data.email()) != null || repository.findByCPF(data.CPF()) != null || repository.findByCel_number(data.cellNumber()) != null) throw new RepeatedAttributeException();
         String cryptografedPassword = new BCryptPasswordEncoder().encode(data.password());
         Users user = new Users(data, cryptografedPassword);
         repository.save(user);

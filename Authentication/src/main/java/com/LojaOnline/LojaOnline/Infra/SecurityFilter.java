@@ -1,6 +1,7 @@
 package com.LojaOnline.LojaOnline.Infra;
 
 import com.LojaOnline.LojaOnline.DataBase.Repository.UserRepository;
+import com.LojaOnline.LojaOnline.Exceptions.RecoverTokenNullException;
 import com.LojaOnline.LojaOnline.Service.AuthenticationService;
 import com.LojaOnline.LojaOnline.Service.TokenService;
 import jakarta.servlet.FilterChain;
@@ -27,8 +28,6 @@ public class SecurityFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         var token = this.recoverToken(request);
         if(token != null){
-            System.out.println("\n\n\n TOKEN QUE CHEGOU AQUI:" + token +"\n\n\n" );
-
             var email = tokenService.validationToken(token);
             UserDetails user = repository.findByEmail(email);
 
@@ -40,7 +39,7 @@ public class SecurityFilter extends OncePerRequestFilter {
 
     public String recoverToken(HttpServletRequest request){
         var authHeader = request.getHeader("Authorization");
-        if(authHeader != null){ return authHeader.replace("Bearer ", "");}
-        return null;
+        if(authHeader == null){return null;}
+        return authHeader.replace("Bearer ", "");
     }
 }
