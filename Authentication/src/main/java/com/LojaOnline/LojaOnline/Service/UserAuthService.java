@@ -34,8 +34,8 @@ public class UserAuthService {
 
     public Users register(UserPostDTO data){
         if(repository.findByEmail(data.email()) != null || repository.findByCPF(data.CPF()) != null || repository.findByCel_number(data.cellNumber()) != null) throw new RepeatedAttributeException();
-        String cryptografedPassword = new BCryptPasswordEncoder().encode(data.password());
-        Users user = new Users(data, cryptografedPassword);
+        String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
+        Users user = new Users(data, encryptedPassword);
         repository.save(user);
         return user;
     }
