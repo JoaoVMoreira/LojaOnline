@@ -30,3 +30,10 @@ services:
     image: redis:latest
     ports:
       - "6379:6379"
+      
+  frontend:
+    build: ./FrontEnd/LojaOnline
+    ports:
+      - "3000:80"
+    depends_on:
+      - auth

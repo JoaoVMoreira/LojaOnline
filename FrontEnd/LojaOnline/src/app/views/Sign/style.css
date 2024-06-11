@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+.conteiner {
+  background-color: #3964D2;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.conteiner .sign-content {
+  background-color: white;
+  border-top-right-radius: 8%;
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 50vw;
+}
+.conteiner .sign-content h1 {
+  margin-top: 2%;
+  color: #656262;
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  width: 504px;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  text-align: center;
+}
+.conteiner .sign-content h1 span {
+  color: #3E60D9;
+}
+.conteiner .sign-content input {
+  height: 40px;
+  width: 500px;
+}
+.conteiner .sign-content section {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+.conteiner .sign-content section label {
+  font-size: 14px;
+}
+.conteiner .sign-content .double-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: baseline;
+}
+.conteiner .sign-content .double-input input {
+  border: 1px solid #7d7d7d;
+  border-radius: 3px;
+  height: 40px;
+  width: 235px;
+}
+.conteiner .sign-content .double-input section {
+  margin-left: 25px;
+}
+.conteiner .sign-content .double-input section:first-child {
+  margin-left: 0px;
+}
+.conteiner .sign-content button {
+  height: 50px;
+  width: 500px;
+  border: none;
+  background-color: #3964D2;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  border-radius: 3px;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+.conteiner .sign-content button:hover {
+  background-color: #224cb6;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.conteiner .sign-content a {
+  color: #3964D2;
+  font-size: 14px;
+  margin-bottom: 5%;
+}
+.conteiner .sign-content .social-login {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.conteiner .sign-content .social-login button {
+  height: 50px;
+  width: 118px;
+  background-color: transparent;
+  border: 1px solid #7d7d7d;
+  margin-left: 5%;
+  margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.conteiner .sign-content .social-login button:first-child {
+  margin-left: 0;
+}
+.conteiner .sign-content .social-login button:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+.conteiner .sign-content .social-login svg {
+  width: 30px;
+}
+.conteiner .sign-image {
+  border-bottom-left-radius: 8%;
+  background-color: #3964D2;
+  height: 100vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.conteiner .sign-image .bg-circle {
+  height: 600px;
+  width: 600px;
+  background-color: #5C87F3;
+  border-radius: 50%;
+}
+.conteiner .sign-image p {
+  margin-top: 5%;
+  margin-left: 8%;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+}/*# sourceMappingURL=style.css.map */

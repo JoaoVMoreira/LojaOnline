@@ -1,0 +1,10 @@
+@import "./variaveis.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    @include heigWid(100%, 100vh);
+}
