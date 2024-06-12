@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import "../../variaveis.scss";
+
+
+/*SOCIAL LOGIN*/
+.socialLogin{
+    width: 100%;
+    @include felxCenter(row, center, center);
+    button{
+        @include heigWid(50px, 118px);
+        background-color: white;
+        border: 1px solid #7d7d7d;
+        margin-left: 5%;
+        margin-top: 0;
+        @include felxCenter(row, center, center);
+    }
+    button:first-child{
+        margin-left: 0;
+    }
+    button:hover{
+        transform: scale(1.1);
+        transition: 0.2s;
+    }
+    svg{
+        width: 30px;
+    }
+}

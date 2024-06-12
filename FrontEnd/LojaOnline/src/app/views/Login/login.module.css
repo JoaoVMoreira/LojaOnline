@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.conteinerAuth {
+  background-color: #3964D2;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.conteinerAuth .signImage {
+  border-bottom-left-radius: 8%;
+  background-color: #3964D2;
+  height: 100vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.conteinerAuth .signImage .bgCircle {
+  height: 600px;
+  width: 600px;
+  background-color: #5C87F3;
+  border-radius: 50%;
+}
+.conteinerAuth .signImage p {
+  margin-top: 5%;
+  margin-left: 8%;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+}
+.conteinerAuth .signContent {
+  background-color: white;
+  border-bottom-left-radius: 8%;
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 50vw;
+}
+.conteinerAuth .signContent h1 {
+  color: #656262;
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  width: 504px;
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+.conteinerAuth .signContent h1 span {
+  color: #3E60D9;
+}
+.conteinerAuth .signContent input {
+  height: 40px;
+  width: 500px;
+}
+.conteinerAuth .signContent section {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+.conteinerAuth .signContent section label {
+  font-size: 14px;
+}
+.conteinerAuth .signContent .doubleInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: baseline;
+}
+.conteinerAuth .signContent .doubleInput input {
+  border: 1px solid #7d7d7d;
+  border-radius: 3px;
+  height: 40px;
+  width: 235px;
+}
+.conteinerAuth .signContent .doubleInput section {
+  margin-left: 25px;
+}
+.conteinerAuth .signContent .doubleInput section:first-child {
+  margin-left: 0px;
+}
+.conteinerAuth .signContent .signButton {
+  height: 50px;
+  width: 500px;
+  border: none;
+  background-color: #3964D2;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  border-radius: 3px;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+.conteinerAuth .signContent .signButton:hover {
+  background-color: #224cb6;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.conteinerAuth .signContent a {
+  color: #3964D2;
+  font-size: 14px;
+  margin-bottom: 5%;
+}/*# sourceMappingURL=login.module.css.map */

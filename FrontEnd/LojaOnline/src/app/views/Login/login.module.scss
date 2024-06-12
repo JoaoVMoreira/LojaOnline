@@ -1,0 +1,85 @@
+@import "../../../variaveis.scss";
+
+.conteinerAuth{
+    background-color: #3964D2;
+    @include heigWid(100%, 100vw);
+    @include felxCenter(row, center, center);
+    .signImage{
+        border-bottom-left-radius: 8%;
+        background-color: #3964D2;
+        @include heigWid(100vh, 50vw);
+        @include felxCenter(row, center, center);
+        .bgCircle{
+            @include heigWid(600px, 600px);
+            background-color: #5C87F3;
+            border-radius: 50%;
+        }
+        p{
+            margin-top: 5%;
+            margin-left: 8%;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            font-family: "Josefin Sans", sans-serif;
+        }
+    }
+    
+    .signContent{
+        background-color: white;
+        border-bottom-left-radius: 8%;
+        font-family: "Josefin Sans", sans-serif;
+        @include felxCenter(column, center, center);
+        @include heigWid(100vh, 50vw);
+        h1{
+            @include title-model-auth();
+            margin-bottom: 5%;
+            margin-top: 5%;
+        }
+        input{
+            @include heigWid(40px, 500px);
+        }
+        section{
+            @include felxCenter(column, baseline, baseline);
+            margin-bottom: 15px;
+            label{
+                font-size: 14px;
+            }
+        }
+        .doubleInput{
+            @include felxCenter(row, baseline, baseline);
+            input{
+                border: 1px solid #7d7d7d;
+                border-radius: 3px;
+                @include heigWid(40px, 235px);
+            }
+            section{
+                margin-left: 25px;
+            }
+            section:first-child{
+                margin-left: 0px;
+            }
+        }
+        .signButton{
+            @include heigWid(50px, 500px);
+            border: none;
+            background-color: #3964D2;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            font-family: "Josefin Sans", sans-serif;
+            border-radius: 3px;
+            margin-bottom: 2%;
+            margin-top: 2%;
+        }
+        .signButton:hover{
+            background-color: #224cb6;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        a{
+            color: #3964D2;
+            font-size: 14px;
+            margin-bottom: 5%;
+        }
+    }
+}

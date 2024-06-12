@@ -1,23 +1,39 @@
 @import "../../../variaveis.scss";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-.conteiner{
+.conteinerAuth{
     background-color: #3964D2;
     @include heigWid(100%, 100vw);
     @include felxCenter(row, center, center);
-    .sign-content{
+    .signImage{
+        border-bottom-left-radius: 8%;
+        background-color: #3964D2;
+        @include heigWid(100vh, 50vw);
+        @include felxCenter(row, center, center);
+        .bgCircle{
+            @include heigWid(600px, 600px);
+            background-color: #5C87F3;
+            border-radius: 50%;
+        }
+        p{
+            margin-top: 5%;
+            margin-left: 8%;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            font-family: "Josefin Sans", sans-serif;
+        }
+    }
+    
+    .signContent{
         background-color: white;
         border-top-right-radius: 8%;
         font-family: "Josefin Sans", sans-serif;
         @include felxCenter(column, center, center);
         @include heigWid(100vh, 50vw);
         h1{
-            margin-top: 2%;
             @include title-model-auth();
             margin-bottom: 5%;
             margin-top: 5%;
-            text-align: center;
         }
         input{
             @include heigWid(40px, 500px);
@@ -29,7 +45,7 @@
                 font-size: 14px;
             }
         }
-        .double-input{
+        .doubleInput{
             @include felxCenter(row, baseline, baseline);
             input{
                 border: 1px solid #7d7d7d;
@@ -43,7 +59,7 @@
                 margin-left: 0px;
             }
         }
-        button{
+        .signButton{
             @include heigWid(50px, 500px);
             border: none;
             background-color: #3964D2;
@@ -55,7 +71,7 @@
             margin-bottom: 2%;
             margin-top: 2%;
         }
-        button:hover{
+        .signButton:hover{
             background-color: #224cb6;
             transition: 0.2s;
             cursor: pointer;
@@ -64,47 +80,6 @@
             color: #3964D2;
             font-size: 14px;
             margin-bottom: 5%;
-        }
-        .social-login{
-            width: 100%;
-            @include felxCenter(row, center, center);
-            button{
-                @include heigWid(50px, 118px);
-                background-color: transparent;
-                border: 1px solid #7d7d7d;
-                margin-left: 5%;
-                margin-top: 0;
-                @include felxCenter(row, center, center);
-            }
-            button:first-child{
-                margin-left: 0;
-            }
-            button:hover{
-                transform: scale(1.1);
-                transition: 0.2s;
-            }
-            svg{
-                width: 30px;
-            }
-        }
-    }
-    .sign-image{
-        border-bottom-left-radius: 8%;
-        background-color: #3964D2;
-        @include heigWid(100vh, 50vw);
-        @include felxCenter(row, center, center);
-        .bg-circle{
-            @include heigWid(600px, 600px);
-            background-color: #5C87F3;
-            border-radius: 50%;
-        }
-        p{
-            margin-top: 5%;
-            margin-left: 8%;
-            font-size: 20px;
-            font-weight: 600;
-            color: white;
-            font-family: "Josefin Sans", sans-serif;
         }
     }
 }
