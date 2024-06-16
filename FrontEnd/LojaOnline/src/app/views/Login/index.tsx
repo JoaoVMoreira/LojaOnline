@@ -3,11 +3,36 @@ import styles from './login.module.scss';
 import Logo from "../../../assets/logo-claro.png"
 import imageLogin from "../../../assets/image-login.png"
 import { useState } from "react";
+import { ILogin } from "../../interfaces/IModalUser";
+import useLoginMutation from "../../services/User/useLoginMutation";
+import { useNavigate } from "react-router-dom";
 
 export default function Login(){
 
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const { mutate, isSuccess, isError, error } = useLoginMutation();
+    const navigate = useNavigate();
+
+    function handleLogin(){
+        const data:ILogin = {
+            email: email,
+            password: password
+        }
+
+        mutate(data);
+
+        if(isSuccess){
+            alert("LOGIN REALZIADO COM SUCESSO!");
+            navigate("/")
+        }
+        if(isError){
+            alert("ERRO AO EFETUAR LOGIN")
+            console.log("ERROR: " + error.stack)
+        }
+
+
+    }
 
     return(
         <div className={styles.conteinerAuth}>
@@ -32,7 +57,7 @@ export default function Login(){
                         <input type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
                     </label>
                 </section>
-                <button className={styles.signButton}>LOGIN</button>
+                <button className={styles.signButton} onClick={handleLogin}>LOGIN</button>
                 <a href="/sign">Não possui cadastro?</a>
                 <SocialLogin/>
             </div>

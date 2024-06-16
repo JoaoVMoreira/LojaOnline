@@ -5,6 +5,7 @@ import styles from "./sign.module.scss"
 import { useState } from "react"
 import userMutation from "../../services/User/userMudation"
 import { IUser } from "../../interfaces/IModalUser"
+import { useNavigate } from "react-router-dom"
 
 export default function Sign(){
 
@@ -15,7 +16,8 @@ export default function Sign(){
     const [confirmPassword, setConfirmPassword] = useState<string>("");
     const [cpf, setCpf] = useState<string>("");
     const [cel_number, setCel_number] = useState<string>("");
-    const { mutate, isSuccess, isError }  = userMutation();
+    const { mutate, isSuccess, isError, error }  = userMutation();
+    const navigate = useNavigate();
 
     function handleSignUser(){
         if(name == "" || surname == "" || email == "" || password == "" || confirmPassword == "" || cpf == "" || cel_number == ""){
@@ -30,7 +32,7 @@ export default function Sign(){
             surname: surname,
             email: email,
             password: password,
-            cel_number: cel_number,
+            cellNumber: cel_number,
             CPF: cpf,
             role: "USER",
         }
@@ -41,9 +43,11 @@ export default function Sign(){
             alert("USUÁRIO CADASTRADO COM SUCESSO!")
         }if(isError){
             alert("ERRO AO CADASTRAR USUÁRIO")
-            console.log(isError.valueOf)
+            console.log("ocorreu o seguinte erro: " + isError.valueOf)
+            console.log(error)
         }
 
+        navigate("/")
     }
 
     return(

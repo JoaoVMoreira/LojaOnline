@@ -4,6 +4,11 @@ export interface IUser{
     name: string,
     surname: string, 
     CPF: string,
-    cel_number: string, 
+    cellNumber: string, 
     role: string
+}
+
+export interface ILogin{
+    email: string,
+    password: string
 }
