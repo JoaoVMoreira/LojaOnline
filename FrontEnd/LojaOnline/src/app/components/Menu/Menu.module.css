@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.menu {
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #3964D2;
+}
+.menu img {
+  width: 150px;
+  margin-right: 5%;
+}
+.menu input {
+  height: 35px;
+  width: 730px;
+  border: none;
+  margin-right: 5%;
+  margin-left: 5%;
+  border-radius: 5px;
+}
+.menu input::-moz-placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  padding-left: 5%;
+}
+.menu input::placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  padding-left: 5%;
+}
+.menu .bntList {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.menu .bntList a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin-right: 20%;
+}
+.menu .bntList a button {
+  height: 15px;
+  width: 15px;
+  background-color: #F2B21D;
+  border: none;
+  border-radius: 50%;
+  margin-left: 50%;
+}
+.menu .bntList a svg {
+  height: 30px;
+}
+.menu .bntList a p {
+  margin-top: 5%;
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+}
+.menu .bntList a:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}/*# sourceMappingURL=Menu.module.css.map */

@@ -1,18 +1,17 @@
-import SocialLogin from "../../components/socialLogin"
+import SocialLogin from "../../components/SocialMediasLogin/socialLogin"
 import styles from './login.module.scss';
 import Logo from "../../../assets/logo-claro.png"
 import imageLogin from "../../../assets/image-login.png"
 import { useState } from "react";
 import { ILogin } from "../../interfaces/IModalUser";
 import useLoginMutation from "../../services/User/useLoginMutation";
-import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Login(){
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { mutate, isSuccess, isError, error } = useLoginMutation();
-    const navigate = useNavigate();
 
     function handleLogin(){
         const data:ILogin = {
@@ -20,14 +19,23 @@ export default function Login(){
             password: password
         }
 
+        if(email == ''){
+            toast.error("É NECESSÁRIO PREENCHER O E-MAIL")
+        }
+        if(password == ''){
+            toast.error("É NECESSÁRIO PREENCHER A SENHA")
+        }
+
         mutate(data);
 
         if(isSuccess){
-            alert("LOGIN REALZIADO COM SUCESSO!");
-            navigate("/")
+            toast.success("LOGIN REALZIADO COM SUCESSO!")
+            setTimeout(()=>{
+                window.location.href = "/"
+            }, 2000)
         }
         if(isError){
-            alert("ERRO AO EFETUAR LOGIN")
+            toast.error("Erro ao efetuar login: " + error.message)
             console.log("ERROR: " + error.stack)
         }
 
@@ -36,6 +44,7 @@ export default function Login(){
 
     return(
         <div className={styles.conteinerAuth}>
+            <ToastContainer/>
             <div className={styles.signImage}>
                 <div className={styles.bgCircle}>
                     <img src={imageLogin} alt="buy-compra-online" />

@@ -1,0 +1,53 @@
+@import "../../../variaveis.scss";
+
+.menu{
+    @include heigWid(100px, 100vw);
+    @include felxCenter(row, center, center);
+    background-color: #3964D2;
+    img{
+        width: 150px;
+        margin-right: 5%;
+    }
+    input{
+        @include heigWid(35px, 730px);
+        border: none;
+        margin-right: 5%;
+        margin-left: 5%;
+        border-radius: 5px;
+    }
+    input::placeholder{
+        font-family: "Josefin Sans", sans-serif;
+        padding-left: 5%;
+    }
+    .bntList{
+        margin-left: 5%;
+        @include felxCenter(row, center, center);
+        a{
+            @include felxCenter(column, center, center);
+            background-color: transparent;
+            border: none;
+            color: white;
+            margin-right: 20%;
+            button{
+                @include heigWid(15px, 15px);
+                background-color: #F2B21D;
+                border: none;
+                border-radius: 50%;
+                margin-left: 50%;
+            }
+            svg{
+                height: 30px;
+            }
+            p{
+                margin-top: 5%;
+                font-size: 16px;
+                font-family: "Josefin Sans", sans-serif;
+            }
+        }
+        a:hover{
+            transform: scale(1.1);
+            transition: 0.2s;
+        }
+    }
+}
+

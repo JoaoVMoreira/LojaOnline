@@ -1,11 +1,11 @@
 import logo from "../../../assets/logo-claro.png"
 import imageCadastro from "../../../assets/image-cadastro.png" 
-import SocialLogin from "../../components/socialLogin"
+import SocialLogin from "../../components/SocialMediasLogin/socialLogin"
 import styles from "./sign.module.scss"
 import { useState } from "react"
 import userMutation from "../../services/User/userMudation"
 import { IUser } from "../../interfaces/IModalUser"
-import { useNavigate } from "react-router-dom"
+import { ToastContainer, toast } from "react-toastify"
 
 export default function Sign(){
 
@@ -17,14 +17,13 @@ export default function Sign(){
     const [cpf, setCpf] = useState<string>("");
     const [cel_number, setCel_number] = useState<string>("");
     const { mutate, isSuccess, isError, error }  = userMutation();
-    const navigate = useNavigate();
 
     function handleSignUser(){
         if(name == "" || surname == "" || email == "" || password == "" || confirmPassword == "" || cpf == "" || cel_number == ""){
-            alert("TODOS OS CAMPOS DEVEM SER PREENCHIDOS")
+            toast.error("TODOS OS CAMPOS DEVEM SER PREENCHIDOS!")
         }
         if(password != confirmPassword){
-            alert("AS SENHAS INFORMADAS NÃO CONDIZEM")
+            toast.warning("AS SENHAS INFORMADAS NÃO CONDIZEM")
         }
 
         const data:IUser = {
@@ -40,18 +39,19 @@ export default function Sign(){
         mutate(data);
 
         if(isSuccess){
-            alert("USUÁRIO CADASTRADO COM SUCESSO!")
+            toast.success("USUÁRIO CADASTRADO COM SUCESSO!")
+            setTimeout(()=>{
+                window.location.href = '/login'
+            }, 2000)
         }if(isError){
-            alert("ERRO AO CADASTRAR USUÁRIO")
-            console.log("ocorreu o seguinte erro: " + isError.valueOf)
+            toast.error("ERRO AO CADASTRAR USUÁRIO: " + error.message)
             console.log(error)
         }
-
-        navigate("/")
     }
 
     return(
         <div className={styles.conteinerAuth}>
+            <ToastContainer/>
             <div className={styles.signContent}>
                 <img src={logo} alt="logo-m-malagu"/>
                 <h1>REALIZE O SEU CADASTRO E COMECE A <span> COMPRAR</span></h1>
